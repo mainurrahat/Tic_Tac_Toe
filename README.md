@@ -1,16 +1,82 @@
-# React + Vite
+🕹️ Tic Tac Toe by Mainur Islam Rahat
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🎮 A fun and interactive Tic Tac Toe game built with React, Tailwind CSS, and React Toastify — featuring smooth UI, playful animations, and funny in-game tips!
 
-Currently, two official plugins are available:
+🌐 Live Demo:
+👉 https://tic-tac-toe-mainur.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+✨ Features
 
-## React Compiler
+🧠 Classic Tic Tac Toe gameplay (X vs O)
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+⚡ Built with React Hooks (useState, useEffect)
 
-## Expanding the ESLint configuration
+🎨 Styled beautifully with Tailwind CSS
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+😂 Displays random funny quotes on every reload
+
+🎉 Toast popup when a winner is declared
+
+💫 Fully responsive and mobile-friendly design
+
+🚀 Tech Stack
+Technology	Purpose
+⚛️ React	Core UI framework
+🎨 Tailwind CSS	Styling and layout
+🔔 React Toastify	Notifications
+🌩️ Vercel	Deployment & hosting
+📂 Folder Structure
+src/
+├── Components/
+│   ├── Board.jsx        # Main game logic
+│   ├── Square.jsx       # Individual cell component
+│
+├── App.jsx              # Entry point UI
+├── App.css              # Custom styles
+└── index.js             # React root
+
+🧑‍💻 How to Run Locally
+
+Clone this repository
+
+git clone https://github.com/your-username/tic-tac-toe-mainur.git
+cd tic-tac-toe-mainur
+
+
+Install dependencies
+
+
+``
+npm install
+``
+
+Start the development server
+
+
+``
+npm run dev
+``
+
+Open your browser and go to
+
+
+``
+http://localhost:5173/
+
+``
+
+🧩 Future Improvements
+
+🔁 Add “Play Again” / “Restart Game” button
+
+🧍‍♂️ Player vs Computer (AI mode)
+
+🌈 Winning animation with confetti
+
+📱 Better responsive layout for mobile
+
+💚 Credits
+
+Developed with ❤️ by Mainur Islam Rahat
+
+"Click squares responsibly 😜"
