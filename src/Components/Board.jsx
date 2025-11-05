@@ -1,30 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Square from "./Square.jsx";
+import { toast, ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 export default function Board() {
   const [square, setSquare] = useState(Array(9).fill(null));
   const [XIsnext, setXIsnext] = useState(true);
   const winner = calculateWinner(square);
+
+  // 🧠 Show toast only when winner appears
+  useEffect(() => {
+    if (winner) {
+      toast.success(`🎉 Winner: ${winner}!`, {
+        position: "top-center",
+        autoClose: 2000,
+      });
+    }
+  }, [winner]);
+
   let status;
   if (winner) {
     status = "Winner: " + winner;
   } else {
     status = "Next player: " + (XIsnext ? "X" : "O");
   }
+
   function handClick(i) {
     if (square[i] || calculateWinner(square)) {
       return;
     }
     const nextSquare = square.slice();
-    if (XIsnext) {
-      nextSquare[i] = "X";
-    } else {
-      nextSquare[i] = "O";
-    }
-
+    nextSquare[i] = XIsnext ? "X" : "O";
     setSquare(nextSquare);
     setXIsnext(!XIsnext);
   }
+
   function calculateWinner(square) {
     const lines = [
       [0, 1, 2],
@@ -47,18 +57,20 @@ export default function Board() {
 
   return (
     <>
-      <div>{status}</div>
+      <div className="text-center text-xl font-semibold">{status}</div>
+
       <div className="grid grid-cols-3 gap-0.5 w-max mx-auto mt-4">
-        <Square value={square[0]} onSquareClick={() => handClick(0)}></Square>
-        <Square value={square[1]} onSquareClick={() => handClick(1)}></Square>
-        <Square value={square[2]} onSquareClick={() => handClick(2)}></Square>
-        <Square value={square[3]} onSquareClick={() => handClick(3)}></Square>
-        <Square value={square[4]} onSquareClick={() => handClick(4)}></Square>
-        <Square value={square[5]} onSquareClick={() => handClick(5)}></Square>
-        <Square value={square[6]} onSquareClick={() => handClick(6)}></Square>
-        <Square value={square[7]} onSquareClick={() => handClick(7)}></Square>
-        <Square value={square[8]} onSquareClick={() => handClick(8)}></Square>
+        {square.map((value, index) => (
+          <Square
+            key={index}
+            value={value}
+            onSquareClick={() => handClick(index)}
+          />
+        ))}
       </div>
+
+      {/* Toast Container */}
+      <ToastContainer />
     </>
   );
 }
