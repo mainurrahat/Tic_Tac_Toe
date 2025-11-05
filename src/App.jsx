@@ -1,9 +1,11 @@
 import "./App.css";
+import Board from "./Components/Board";
 
 function App() {
   return (
     <>
-      <h1 className="">rahat</h1>
+      <h1 className="">Hello Tic Tac Tow</h1>
+      <Board />
     </>
   );
 }
