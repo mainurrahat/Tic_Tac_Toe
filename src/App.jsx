@@ -1,10 +1,9 @@
- import "./App.css";
+import "./App.css";
 
 function App() {
- 
   return (
     <>
-      <h1>rahat</h1>
+      <h1 className="">rahat</h1>
     </>
   );
 }
